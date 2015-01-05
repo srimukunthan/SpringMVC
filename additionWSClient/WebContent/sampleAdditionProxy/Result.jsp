@@ -73,6 +73,18 @@ case 13:
         <%= tempResultreturnp14 %>
         <%
 break;
+case 20:
+        gotMethod = true;
+        String n1_3id=  request.getParameter("n123");
+        int n1_3idTemp  = Integer.parseInt(n1_3id);
+        String n2_4id=  request.getParameter("n225");
+        int n2_4idTemp  = Integer.parseInt(n2_4id);
+        int sub20mtemp = sampleAdditionProxyid.sub(n1_3idTemp,n2_4idTemp);
+        String tempResultreturnp21 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(sub20mtemp));
+        %>
+        <%= tempResultreturnp21 %>
+        <%
+break;
 }
 } catch (Exception e) { 
 %>

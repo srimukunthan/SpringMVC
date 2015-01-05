@@ -24,7 +24,11 @@
         <parameter qname="pns:n1" xmlns:pns="http://example.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
         <parameter qname="pns:n2" xmlns:pns="http://example.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
       </operation>
-      <parameter name="allowedMethods" value="add"/>
+      <operation name="sub" qname="operNS:sub" xmlns:operNS="http://example.com" returnQName="retNS:subReturn" xmlns:retNS="http://example.com" returnType="rtns:int" xmlns:rtns="http://www.w3.org/2001/XMLSchema" soapAction="" >
+        <parameter qname="pns:n1" xmlns:pns="http://example.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+        <parameter qname="pns:n2" xmlns:pns="http://example.com" type="tns:int" xmlns:tns="http://www.w3.org/2001/XMLSchema"/>
+      </operation>
+      <parameter name="allowedMethods" value="sub add"/>
 
   </service>
 </deployment>

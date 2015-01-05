@@ -77,6 +77,29 @@ valid = false;
 </FORM>
 <%
 break;
+case 20:
+valid = false;
+%>
+<FORM METHOD="POST" ACTION="Result.jsp" TARGET="result">
+<INPUT TYPE="HIDDEN" NAME="method" VALUE="<%=org.eclipse.jst.ws.util.JspUtils.markup(method)%>">
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">n1:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="n123" SIZE=20></TD>
+</TR>
+</TABLE>
+<TABLE>
+<TR>
+<TD COLSPAN="1" ALIGN="LEFT">n2:</TD>
+<TD ALIGN="left"><INPUT TYPE="TEXT" NAME="n225" SIZE=20></TD>
+</TR>
+</TABLE>
+<BR>
+<INPUT TYPE="SUBMIT" VALUE="Invoke">
+<INPUT TYPE="RESET" VALUE="Clear">
+</FORM>
+<%
+break;
 case 1111111111:
 valid = false;
 %>

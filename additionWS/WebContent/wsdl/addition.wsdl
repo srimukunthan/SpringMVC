@@ -19,12 +19,43 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
      </sequence>
     </complexType>
    </element>
+   <element name="sub">
+    <complexType>
+     <sequence>
+      <element name="n1" type="xsd:int"/>
+      <element name="n2" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="subResponse">
+    <complexType>
+     <sequence>
+      <element name="subReturn" type="xsd:int"/>
+     </sequence>
+    </complexType>
+   </element>
   </schema>
  </wsdl:types>
 
    <wsdl:message name="addRequest">
 
       <wsdl:part element="impl:add" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subRequest">
+
+      <wsdl:part element="impl:sub" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="subResponse">
+
+      <wsdl:part element="impl:subResponse" name="parameters">
 
       </wsdl:part>
 
@@ -52,6 +83,18 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
 
       </wsdl:operation>
 
+      <wsdl:operation name="sub">
+
+         <wsdl:input message="impl:subRequest" name="subRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:subResponse" name="subResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
    </wsdl:portType>
 
    <wsdl:binding name="additionSoapBinding" type="impl:addition">
@@ -69,6 +112,24 @@ Built on Apr 22, 2006 (06:55:48 PDT)-->
          </wsdl:input>
 
          <wsdl:output name="addResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="sub">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="subRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="subResponse">
 
             <wsdlsoap:body use="literal"/>
 

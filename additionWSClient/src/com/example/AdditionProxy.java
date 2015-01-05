@@ -50,5 +50,11 @@ public class AdditionProxy implements com.example.Addition {
     return addition.add(n1, n2);
   }
   
+  public int sub(int n1, int n2) throws java.rmi.RemoteException{
+    if (addition == null)
+      _initAdditionProxy();
+    return addition.sub(n1, n2);
+  }
+  
   
 }
