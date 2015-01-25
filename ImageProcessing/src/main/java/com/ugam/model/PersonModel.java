@@ -1,13 +1,13 @@
 package com.ugam.model;
 
-public class UserModel {
+public class PersonModel {
 	
 	private int userId;
 	private String userName;
 	private String password;
 	private String role;
 	
-	public UserModel(String userName, String password, String role) {
+	public PersonModel(String userName, String password, String role) {
 		super();
 		this.userName = userName;
 		this.password = password;

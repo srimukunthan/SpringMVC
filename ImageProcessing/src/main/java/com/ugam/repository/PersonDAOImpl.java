@@ -10,7 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
-import com.ugam.model.UserModel;
+import com.ugam.model.PersonModel;
 
 @Repository
 public class PersonDAOImpl implements PersonDAO {
@@ -25,27 +25,27 @@ public class PersonDAOImpl implements PersonDAO {
 	}
 	
 	@Override
-	public void addPerson(UserModel user) {
+	public void addPerson(PersonModel person) {
 		String sql = "INSERT INTO user_mater " +
 				"(user_name, password, role) VALUES (?, ?, ?)";
-		int rowcount = simpleJdbcTemplate.update(sql,new Object[] { user.getUserName() , user.getPassword(), user.getRole() });
+		int rowcount = simpleJdbcTemplate.update(sql,new Object[] { person.getUserName() , person.getPassword(), person.getRole() });
 		System.out.println(rowcount);
 	}
 
 	@Override
-	public void updatePerson(UserModel p) {
+	public void updatePerson(PersonModel p) {
 		// TODO Auto-generated method stub
 		
 	}
 
 	@Override
-	public List<UserModel> listPersons() {
+	public List<PersonModel> listPersons() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public UserModel getPersonById(int id) {
+	public PersonModel getPersonById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

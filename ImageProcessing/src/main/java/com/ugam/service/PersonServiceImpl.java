@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.ugam.repository.*;
-import com.ugam.model.UserModel;
+import com.ugam.model.PersonModel;
 @Service
 public class PersonServiceImpl implements PersonService {
 	
@@ -18,21 +18,21 @@ public class PersonServiceImpl implements PersonService {
 	}
 	
 	@Override
-	public void addPerson(UserModel user) {
+	public void addPerson(PersonModel user) {
 		this.personDAO.addPerson(user);		
 	}
 	@Override
-	public void updatePerson(UserModel user) {
+	public void updatePerson(PersonModel user) {
 		// TODO Auto-generated method stub
 		
 	}
 	@Override
-	public List<UserModel> listPersons() {
+	public List<PersonModel> listPersons() {
 		// TODO Auto-generated method stub
 		return null;
 	}
 	@Override
-	public UserModel getPersonById(int id) {
+	public PersonModel getPersonById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}

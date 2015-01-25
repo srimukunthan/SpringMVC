@@ -14,7 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.ugam.model.UserModel;
+import com.ugam.model.PersonModel;
 import com.ugam.service.PersonService;
 
 /**
@@ -48,7 +48,7 @@ public class HomeController {
 		
 		
 		
-			personService.addPerson(new UserModel("mukunth", "143", "admin"));
+			personService.addPerson(new PersonModel("mukunth", "143", "admin"));
 		
 		
 		model.addAttribute("serverTime",  msg);
