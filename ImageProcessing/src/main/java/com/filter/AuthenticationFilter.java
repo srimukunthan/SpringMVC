@@ -38,15 +38,13 @@ public class AuthenticationFilter implements Filter {
 		 
         HttpServletRequest req = (HttpServletRequest) request;
         
-        Object userName = req.getSession().getAttribute("userName");
+        Object userName = req.getSession().getAttribute("uname");
          
         if(userName == null) {
         	String uri = req.getRequestURI();
-        	System.out.println("111111111"+uri);
         	RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/login.jsp"); 
         	dispatcher.forward(request, response);
         } else {
-        	System.out.println("222222222");
             // pass the request along the filter chain
             chain.doFilter(request, response);
         }

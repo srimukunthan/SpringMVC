@@ -8,7 +8,7 @@
 </head>
 <body>
 <br>
-<center><b>Welcome  ${uname}</b> 
+<center><b>Welcome  ${uname}</b> &nbsp;&nbsp; <a href="logout.htm">Logout</a>
 <br>
 <img alt="#" height="600px" width="50%" src="${pageContext.servletContext.contextPath}/resources/images/Panda.jpg">
 </center>

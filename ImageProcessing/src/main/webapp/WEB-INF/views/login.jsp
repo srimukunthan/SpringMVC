@@ -7,20 +7,20 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form name='loginForm' action="doLogin.html"  method='POST'>  
-   
-  <table>  
+<form name='loginForm' action="dashboard.html"  method='POST'>  
+   ${uname}
+  <table>  <tr><td>&nbsp;</td></tr>
    <tr>  
     <td>User:</td>  
     <td><input type='text' name='userName' required value=''>  
     </td>  
-   </tr>  
+   </tr> <tr><td>&nbsp;</td></tr>
    <tr>  
     <td>Password:</td>  
     <td><input type='password' name='password' required />  
     </td>  
    </tr>  
-   <tr>  
+   <tr>  <tr><td>&nbsp;</td></tr>
     <td colspan='2'><input name="submit" type="submit"  
      value="Login" />  
     </td>  

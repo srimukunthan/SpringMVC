@@ -2,6 +2,7 @@ package com.ugam.controller;
 
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 
@@ -29,14 +30,13 @@ public class LoginController {
 		this.personService = ps;
 	}
 	
-	
 	@RequestMapping(value = {"/login.htm","/"}, method = RequestMethod.GET)
 	public String loginPage(Model model) {
 		model.addAttribute("personModel", new PersonModel());
 		return "login";
 	}
 	
-	@RequestMapping(value = "/doLogin.html", method = RequestMethod.POST)
+	@RequestMapping(value = "/dashboard.html", method = RequestMethod.POST)
 	public ModelAndView doLogin(@ModelAttribute PersonModel personModel, HttpSession session) {
 		ModelAndView view = new ModelAndView("login");
 		if(personService.authenticateUser(personModel)) {
@@ -49,5 +49,21 @@ public class LoginController {
 			}
 		return view;
 	}
-
+	
+	@RequestMapping(value = "/dashboard.html", method = RequestMethod.GET)
+	public String sessionRedirect(HttpServletRequest request) {
+		
+		HttpServletRequest req = (HttpServletRequest) request;
+        Object userName = req.getSession().getAttribute("uname");
+		if(userName == null)
+			return "login";
+		else
+			return "welcome";
+	} 
+	
+	@RequestMapping(value = "/logout.htm")
+	public String logout(HttpSession session) {
+	    session.invalidate();
+	    return "login";
+	  }
 }
