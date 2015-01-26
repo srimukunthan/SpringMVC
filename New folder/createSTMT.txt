@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS `ebayimageprocessing`.`user_mater`;
+CREATE TABLE  `ebayimageprocessing`.`user_mater` (
+  `user_id` int(10) NOT NULL AUTO_INCREMENT,
+  `user_name` varchar(50) NOT NULL,
+  `password` varchar(20) NOT NULL,
+  `role` varchar(10) NOT NULL,
+  PRIMARY KEY (`user_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
