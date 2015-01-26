@@ -7,6 +7,9 @@ public class PersonModel {
 	private String password;
 	private String role;
 	
+	public PersonModel() {
+		super();
+	}
 	public PersonModel(String userName, String password, String role) {
 		super();
 		this.userName = userName;

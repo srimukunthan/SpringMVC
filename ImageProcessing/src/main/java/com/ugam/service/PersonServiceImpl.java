@@ -33,13 +33,19 @@ public class PersonServiceImpl implements PersonService {
 	}
 	@Override
 	public PersonModel getPersonById(int id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 	@Override
 	public void removePerson(int id) {
 		// TODO Auto-generated method stub
 		
+	}
+
+	@Override
+	public boolean authenticateUser(PersonModel personModel) {
+		
+		return personDAO.authenticateUser(personModel);
 	}
 
 

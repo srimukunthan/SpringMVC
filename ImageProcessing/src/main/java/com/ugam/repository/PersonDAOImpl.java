@@ -17,18 +17,18 @@ public class PersonDAOImpl implements PersonDAO {
 	
 	private static final Logger logger = LoggerFactory.getLogger(PersonDAOImpl.class);
 
-	private JdbcTemplate simpleJdbcTemplate;
+	private JdbcTemplate jdbcTemplate;
 	
 	@Autowired
 	public void setDataSource(DataSource dataSource){
-		this.simpleJdbcTemplate = new JdbcTemplate(dataSource);
+		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
 	
 	@Override
 	public void addPerson(PersonModel person) {
 		String sql = "INSERT INTO user_mater " +
 				"(user_name, password, role) VALUES (?, ?, ?)";
-		int rowcount = simpleJdbcTemplate.update(sql,new Object[] { person.getUserName() , person.getPassword(), person.getRole() });
+		int rowcount = jdbcTemplate.update(sql,new Object[] { person.getUserName() , person.getPassword(), person.getRole() });
 		System.out.println(rowcount);
 	}
 
@@ -46,16 +46,23 @@ public class PersonDAOImpl implements PersonDAO {
 
 	@Override
 	public PersonModel getPersonById(int id) {
-		// TODO Auto-generated method stub
+//		String sql = "selcet * from user_master where user_id = ?";
+//		personModel = simpleJdbcTemplate.queryForInt(sql, id );
+//		PersonModel personModel = new PersonModel(null, null, null);
 		return null;
 	}
 
 	@Override
 	public void removePerson(int id) {
 		// TODO Auto-generated method stub
-		
 	}
 
-	
-
+	@Override
+	public boolean authenticateUser(PersonModel personModel) {
+		boolean status = false;
+		String sql = "select count(*) from user_mater where user_name=? and password=?";
+		int rowcount = jdbcTemplate.queryForInt(sql,personModel.getUserName() , personModel.getPassword());
+		status = (rowcount > 0 ? true : status);
+		return status;
+	}
 }

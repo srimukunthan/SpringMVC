@@ -11,4 +11,5 @@ public interface PersonDAO {
 	public List<PersonModel> listPersons();
 	public PersonModel getPersonById(int id);
 	public void removePerson(int id);
+	public boolean authenticateUser(PersonModel personModel);
 }
