@@ -7,5 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-Welcome ${uname}</body>
+<br>
+<center><b>Welcome  ${uname}</b> 
+<br>
+<img alt="#" height="600px" width="50%" src="${pageContext.servletContext.contextPath}/resources/images/Panda.jpg">
+</center>
+</body>
 </html>
